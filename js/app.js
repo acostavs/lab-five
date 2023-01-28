@@ -61,20 +61,20 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
     let myArr = []
     let firstOne = parseInt(sum(a, b))
-    console.log(firstOne)
+    // console.log(firstOne)
     let secondOne = parseInt(sum(firstOne, c))
-    console.log(secondOne)
+    // console.log(secondOne)
     myArr.push(secondOne)
-    console.log(myArr)
+    // console.log(myArr)
     let myProduct = parseInt(multiply(a, b))
-    console.log(myProduct)
+    // console.log(myProduct)
     let mySecondProduct = parseInt(multiply(myProduct, c))
-    console.log(mySecondProduct)
+    // console.log(mySecondProduct)
     myArr.push(mySecondProduct)
-    console.log(myArr)
+    // console.log(myArr)
     myArr.push(`${a} and ${b} and ${c} sum to ${secondOne}.`)
     myArr.push(`The product of ${a} and ${b} and ${c} is ${mySecondProduct}.`)
-    console.log(myArr)
+    // console.log(myArr)
     return myArr
 }
 
@@ -109,7 +109,7 @@ function sumArray(sumArr) { //eslint-disable-line
     myArrTwo.push(idkTwo)
     let myMessage = `2,3,4 was passed in as an array of numbers, and 9 is their sum.`
     myArrTwo.push(myMessage)
-    console.log(myArrTwo)
+    // console.log(myArrTwo)
     return myArrTwo
 
 
@@ -126,7 +126,9 @@ testSumArray(testArray);
 
 /////////////////////////////////////
 /* Problem 5
-Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array 
+whose first element is the product of those numbers, and the second element is a string that EXACTLY follows 
+this example and uses the values that were input into the function:
 
 "The numbers 2,3,4 have a product of 24."
 
@@ -136,11 +138,26 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+    console.log(multArr)
+    let numberAtFirstIndex = multArr[0]
+    let numberAtSecondIndex = multArr[1]
+    let numberAtThirdIndex = multArr[2]
+    let idkA = parseInt(multiply(numberAtFirstIndex, numberAtThirdIndex))
+    let idkB = [parseInt(multiply(numberAtSecondIndex, idkA))]
+    console.log(idkA)
+    console.log(idkB)
+    let myMultString = `The numbers ${numberAtFirstIndex},${numberAtSecondIndex},${numberAtThirdIndex} have a product of ${idkB}.`
+    idkB.push(myMultString)
+    console.log(idkB)
+
+    return idkB
+
+
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
